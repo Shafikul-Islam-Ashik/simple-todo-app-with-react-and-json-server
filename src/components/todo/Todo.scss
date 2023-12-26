@@ -29,13 +29,8 @@
       padding: 15px 10px;
       form {
         display: flex;
-        // align-items: center;
         justify-content: space-between;
         gap: 5px;
-
-        input {
-          //   background-color: var(--bg-3);
-        }
 
         label {
           font-size: 14px;
@@ -81,11 +76,11 @@
         border-radius: 10px;
         height: 65vh;
         overflow-x: hidden;
-        overflow-y: hidden;
+        overflow-y: scroll;
         color: var(--black-2);
 
         &:hover {
-          overflow-y: scroll;
+          //   overflow-y: scroll;
         }
 
         li {
@@ -102,6 +97,38 @@
 
           button {
             background-color: var(--bg-1);
+          }
+
+          .left-side {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            .left-side-content {
+              p {
+                font-size: 14px;
+              }
+              .date {
+                font-size: 11px;
+                color: var(--black-1);
+                font-weight: 500;
+              }
+              .priority {
+                font-size: 11px;
+                padding: 0px 5px;
+                border-radius: 5px;
+              }
+              //   .important {
+              //     background-color: var(--gray-1);
+
+              //     // background-color: red;
+              //     color: rgb(230, 224, 224);
+              //   }
+              .important {
+                background-color: var(--gray-1);
+                color: rgb(146, 140, 140);
+              }
+            }
           }
         }
       }

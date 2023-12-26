@@ -1,3 +1,46 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "taskName": "Ashik",
+      "dueDate": "2023-12-26",
+      "priority": "General",
+      "status": "Pending",
+      "id": 1
+    },
+    {
+      "taskName": "Ashik",
+      "dueDate": "2023-12-26",
+      "priority": "Important",
+      "status": "Pending",
+      "id": 2
+    },
+    {
+      "taskName": "Ashik",
+      "dueDate": "2023-12-29",
+      "priority": "Important",
+      "status": "Pending",
+      "id": 3
+    },
+    {
+      "taskName": "Ashik",
+      "dueDate": "2023-12-14",
+      "priority": "General",
+      "status": "Pending",
+      "id": 4
+    },
+    {
+      "taskName": "Ashik",
+      "dueDate": "2023-12-14",
+      "priority": "Important",
+      "status": "Pending",
+      "id": 5
+    },
+    {
+      "taskName": "Ashik",
+      "dueDate": "2023-12-27",
+      "priority": "Important",
+      "status": "Pending",
+      "id": 6
+    }
+  ]
 }
