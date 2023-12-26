@@ -1,0 +1,110 @@
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  background: var(--bg-1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .todo-container {
+    width: 750px;
+    height: 100vh;
+    padding: 15px;
+    // border: 1px solid red;
+    // overflow: hidden;
+
+    .titile {
+      h1 {
+        text-align: center;
+        color: var(--black-1);
+        font-weight: 600;
+        font-size: 30px;
+      }
+    }
+
+    .add-todo-form {
+      //   border: 1px solid green;
+      background-color: var(--bg-2);
+      padding: 15px 10px;
+      form {
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+
+        input {
+          //   background-color: var(--bg-3);
+        }
+
+        label {
+          font-size: 14px;
+          font-weight: 400;
+          color: var(--black-2);
+        }
+
+        .add-task-btn {
+          align-self: flex-end;
+        }
+
+        .task-name {
+          flex: 5;
+        }
+        .due-date {
+          flex: 2;
+        }
+        .priority {
+          flex: 2;
+        }
+        button {
+          flex: 1;
+        }
+      }
+    }
+
+    .filter {
+      width: 20%;
+      select {
+        // background-color: var(--bg-1);
+      }
+    }
+    // todo-content-wrapper css
+    .todo-content-wrapper {
+      //   width: 100%;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        background: var(--bg-2);
+        border-radius: 10px;
+        height: 65vh;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        color: var(--black-2);
+
+        &:hover {
+          overflow-y: scroll;
+        }
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: var(--white);
+          padding: 5px 10px;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: var(--gray-2);
+          }
+
+          button {
+            background-color: var(--bg-1);
+          }
+        }
+      }
+    }
+  }
+}
