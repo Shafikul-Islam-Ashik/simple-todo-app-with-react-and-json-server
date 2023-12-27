@@ -1,45 +1,45 @@
 {
   "todos": [
     {
-      "taskName": "Ashik",
-      "dueDate": "2023-12-26",
-      "priority": "General",
-      "status": "Pending",
+      "taskName": "Go to school",
+      "dueDate": "2023-12-28",
+      "priority": "Important",
+      "completed": true,
       "id": 1
     },
     {
-      "taskName": "Ashik",
-      "dueDate": "2023-12-26",
-      "priority": "Important",
-      "status": "Pending",
+      "taskName": "Play football",
+      "dueDate": "2023-12-27",
+      "priority": "General",
+      "completed": true,
       "id": 2
     },
     {
-      "taskName": "Ashik",
-      "dueDate": "2023-12-29",
-      "priority": "Important",
-      "status": "Pending",
+      "taskName": "Go to Market ",
+      "dueDate": "2023-12-27",
+      "priority": "General",
+      "completed": true,
       "id": 3
     },
     {
-      "taskName": "Ashik",
-      "dueDate": "2023-12-14",
-      "priority": "General",
-      "status": "Pending",
+      "taskName": "Buy necessary products",
+      "dueDate": "2023-12-27",
+      "priority": "Important",
+      "completed": true,
       "id": 4
     },
     {
       "taskName": "Ashik",
-      "dueDate": "2023-12-14",
-      "priority": "Important",
-      "status": "Pending",
+      "dueDate": "2023-12-21",
+      "priority": "General",
+      "completed": false,
       "id": 5
     },
     {
-      "taskName": "Ashik",
-      "dueDate": "2023-12-27",
+      "taskName": "Ayesha",
+      "dueDate": "2023-12-01",
       "priority": "Important",
-      "status": "Pending",
+      "completed": false,
       "id": 6
     }
   ]
