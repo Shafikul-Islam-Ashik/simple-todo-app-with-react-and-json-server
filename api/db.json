@@ -1,7 +1,7 @@
 {
   "todos": [
     {
-      "taskName": "Go to school",
+      "taskName": "Go to school and come home",
       "dueDate": "2023-12-28",
       "priority": "Important",
       "completed": true,
@@ -11,14 +11,14 @@
       "taskName": "Play football",
       "dueDate": "2023-12-27",
       "priority": "General",
-      "completed": true,
+      "completed": false,
       "id": 2
     },
     {
       "taskName": "Go to Market ",
       "dueDate": "2023-12-27",
       "priority": "General",
-      "completed": true,
+      "completed": false,
       "id": 3
     },
     {
@@ -27,20 +27,6 @@
       "priority": "Important",
       "completed": true,
       "id": 4
-    },
-    {
-      "taskName": "Ashik",
-      "dueDate": "2023-12-21",
-      "priority": "General",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "taskName": "Ayesha",
-      "dueDate": "2023-12-01",
-      "priority": "Important",
-      "completed": false,
-      "id": 6
     }
   ]
 }

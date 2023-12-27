@@ -90,6 +90,14 @@ const Todo = () => {
 
         // success message
         createToast("Task updated successful", "success");
+
+        // clear form data after update
+        setInput({
+          taskName: "",
+          dueDate: "",
+          priority: "General",
+          completed: false,
+        });
       }
     } else {
       // Handle create logic here
@@ -105,16 +113,16 @@ const Todo = () => {
 
         // success message
         createToast("Task added successful", "success");
+
+        // clear form data after submission
+        setInput({
+          taskName: "",
+          dueDate: "",
+          priority: "General",
+          completed: false,
+        });
       }
     }
-
-    // clear form data after submission or update
-    setInput({
-      taskName: "",
-      dueDate: "",
-      priority: "General",
-      completed: false,
-    });
 
     // Reset mode to create after submission
     setIsUpdateMode(false);
@@ -289,53 +297,59 @@ const Todo = () => {
           {/* todo content wrapper  */}
           <div className="todo-content-wrapper mt-1">
             <ul>
-              {todo.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <div className="left-side">
-                      <span>
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          onChange={() => handleToggle(item.id)}
-                          checked={item.completed ? true : false}
-                        />
-                      </span>
-                      <div className="left-side-content">
-                        <p
-                          className="mb-0"
-                          style={{
-                            textDecoration: item.completed
-                              ? "line-through"
-                              : "none",
-                          }}
-                        >
-                          {item.taskName}
-                        </p>
-                        <span className="date me-2">{item.dueDate}</span>
+              {todo?.length > 0 ? (
+                todo.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <div className="left-side">
+                        <span>
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            onChange={() => handleToggle(item.id)}
+                            checked={item.completed ? true : false}
+                          />
+                        </span>
+                        <div className="left-side-content">
+                          <p
+                            className="mb-0"
+                            style={{
+                              textDecoration: item.completed
+                                ? "line-through"
+                                : "none",
+                            }}
+                          >
+                            {item.taskName}
+                          </p>
+                          <span className="date me-2">{item.dueDate}</span>
 
-                        {item.priority == "Important" && (
-                          <span className="priority important">Important</span>
-                        )}
+                          {item.priority == "Important" && (
+                            <span className="priority important">
+                              Important
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <span>
-                      <button
-                        className="btn btn-sm me-1"
-                        onClick={() => handleUpdateMode(item.id)}
-                      >
-                        <FaEdit />
-                      </button>
-                      <button
-                        className="btn btn-sm"
-                        onClick={() => handleDeleteTodo(item.id)}
-                      >
-                        <MdDelete />
-                      </button>
-                    </span>
-                  </li>
-                );
-              })}
+                      <span>
+                        <button
+                          className="btn btn-sm me-1"
+                          onClick={() => handleUpdateMode(item.id)}
+                        >
+                          <FaEdit />
+                        </button>
+                        <button
+                          className="btn btn-sm"
+                          onClick={() => handleDeleteTodo(item.id)}
+                        >
+                          <MdDelete />
+                        </button>
+                      </span>
+                    </li>
+                  );
+                })
+              ) : (
+                <li>No data</li>
+              )}
             </ul>
           </div>
         </div>
