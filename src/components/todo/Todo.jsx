@@ -326,9 +326,9 @@ const Todo = () => {
             >
               <option value="All">All</option>
               <option value={false}>Pending</option>
-              <option value={true}>Completed</option>
-              <option value="General">General</option>
               <option value="Important">Important</option>
+              <option value="General">General</option>
+              <option value={true}>Completed</option>
             </select>
           </div>
 
