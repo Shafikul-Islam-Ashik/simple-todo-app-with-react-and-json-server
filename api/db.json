@@ -1,46 +1,53 @@
 {
   "todos": [
     {
-      "taskName": "Go to school and come home",
-      "dueDate": "2023-12-28",
-      "priority": "Important",
-      "completed": false,
-      "id": 1
-    },
-    {
-      "taskName": "Play football",
-      "dueDate": "2023-12-27",
+      "taskName": "General task",
+      "dueDate": "2023-12-29",
       "priority": "General",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "taskName": "Go to Market ",
-      "dueDate": "2023-12-27",
-      "priority": "Important",
       "completed": false,
       "id": 3
     },
     {
-      "taskName": "Buy necessary products",
-      "dueDate": "2023-12-27",
+      "taskName": "Important task",
+      "dueDate": "2023-12-29",
       "priority": "Important",
       "completed": true,
       "id": 4
     },
     {
-      "taskName": "Go to school",
-      "dueDate": "2023-12-27",
+      "taskName": "another pending task",
+      "dueDate": "2023-12-29",
       "priority": "Important",
       "completed": true,
       "id": 5
     },
     {
-      "taskName": "Ashik",
+      "taskName": "only important task here",
+      "dueDate": "2023-12-29",
+      "priority": "Important",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "taskName": "only important task here 2",
+      "dueDate": "2023-12-29",
+      "priority": "Important",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "taskName": "only general task here",
       "dueDate": "2023-12-29",
       "priority": "General",
       "completed": false,
-      "id": 6
+      "id": 10
+    },
+    {
+      "taskName": "only general task here 2",
+      "dueDate": "2023-12-29",
+      "priority": "General",
+      "completed": false,
+      "id": 11
     }
   ]
 }

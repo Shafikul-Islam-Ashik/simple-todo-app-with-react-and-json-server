@@ -50,12 +50,24 @@ const Todo = () => {
   // state for set and unset update mode of the form
   const [isUpdateMode, setIsUpdateMode] = useState(false);
 
-  // state for check is in All mode or not (in filter option activation) for checkbox handle(completed/pending) instantly
+  //********** states (when filter) for controlling filter mode  ********//
+  // state for check is in All mode or not (when filter)
   const [isInAllMode, setIsInAllMode] = useState(true);
 
-  // state for check is in isInGeneral_ImportantMode or not (in filter option activation) for handle important/general instantly
+  // state for check is in isInGeneral_ImportantMode or not (when filter )
   const [isInGeneral_ImportantMode, setisInGeneral_ImportantMode] =
     useState(false);
+
+  // state for check is in isInGeneralMode or not (when filter )
+  const [isInGeneralMode, setIsInGeneralMode] = useState(false);
+
+  // state for check is in isInImportantMode or not (when filter )
+  const [isInImportantMode, setIsInImportantMode] = useState(false);
+
+  // state for check is in isInPendingMode or not (when filter )
+  const [isInPendingMode, setIsInPendingdMode] = useState(false);
+
+  const [isInCompletedMode, setIsInCompletedMode] = useState(false);
 
   // form management
   const [input, setInput] = useState({
@@ -133,7 +145,20 @@ const Todo = () => {
         // add form inputs to db
         const response = await axios.post("http://localhost:7000/todos", input);
 
-        dispatch({ type: "ADD_TODO", payload: response.data });
+        // add data to state when all and pending mode is true
+        if (isInAllMode || isInPendingMode) {
+          dispatch({ type: "ADD_TODO", payload: response.data });
+        } else {
+          // add data to state when general mode is true and priority is Genetal
+          if (isInGeneralMode && input.priority === "General") {
+            dispatch({ type: "ADD_TODO", payload: response.data });
+          }
+
+          // add data to state when important mode is true priority is Important
+          if (isInImportantMode && input.priority === "Important") {
+            dispatch({ type: "ADD_TODO", payload: response.data });
+          }
+        }
 
         // success message
         createToast("Task added successful", "success");
@@ -190,24 +215,54 @@ const Todo = () => {
     if (type === "All") {
       response = await axios.get(`http://localhost:7000/todos`);
 
+      // change state when filter
       setIsInAllMode(true);
       setisInGeneral_ImportantMode(false);
+      setIsInGeneralMode(false);
+      setIsInImportantMode(false);
+      setIsInPendingdMode(false);
+      setIsInCompletedMode(false);
     } else if (type === "General" || type === "Important") {
       response = await axios.get(
         `http://localhost:7000/todos?priority=${type}&completed=false`
       );
 
+      // change state when filter
       setIsInAllMode(false);
       setisInGeneral_ImportantMode(true);
+      setIsInPendingdMode(false);
+      setIsInCompletedMode(false);
+
+      if (type === "General") {
+        setIsInGeneralMode(true);
+        setIsInImportantMode(false);
+      }
+      if (type === "Important") {
+        setIsInImportantMode(true);
+        setIsInGeneralMode(false);
+      }
     } else {
       response = await axios.get(
         `http://localhost:7000/todos?completed=${type}`
       );
 
+      // change state when filter
       setIsInAllMode(false);
       setisInGeneral_ImportantMode(false);
+      setIsInGeneralMode(false);
+      setIsInImportantMode(false);
+
+      if (type === "true") {
+        setIsInPendingdMode(false);
+        setIsInCompletedMode(true);
+      }
+      if (type === "false") {
+        setIsInPendingdMode(true);
+        setIsInCompletedMode(false);
+      }
     }
 
+    //dispatch finally
     dispatch({ type: "FILTER_TODO", payload: response.data });
   };
 
